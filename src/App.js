@@ -10,7 +10,7 @@ class App extends Component {
 
   async componentDidMount() {
     try {
-      const response = await fetch('https://localhost:3000/api/v1/stars')
+      const response = await fetch(process.env.REACT_APP_DATABASE_API_URL )
       const data = await response.json()
       console.log(data)
     }
