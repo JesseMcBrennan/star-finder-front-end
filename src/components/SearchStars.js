@@ -23,7 +23,6 @@ class SearchStars extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     console.log('submitted')
-    alert(dropdown.value)
   }
 
   populateStars = async (stars) => {
