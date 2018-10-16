@@ -4,7 +4,8 @@ class SearchStars extends Component {
   constructor() {
     super();
     this.state = {
-      searchValue: []
+      searchValue: [],
+      selectedStar: []
     }
   }
 
@@ -21,10 +22,8 @@ class SearchStars extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.submitSearch(this.state)
-    this.setState({
-      searchValue: ''
-    })
+    console.log('submitted')
+    alert(dropdown.value)
   }
 
   populateStars = async (stars) => {
@@ -42,19 +41,23 @@ class SearchStars extends Component {
     }
   }
 
-
   render() {
+    const stars = this.state.searchValue
+    const starNames = stars.map((star) => <option value={star.name} key={star.name}>{star.name}</option>
+    );
+
     return (
       <form className="search-container" onSubmit={this.handleSubmit}>
         <select name='search-stars' onChange={this.handleChange}>
-          <option
+          <option 
             value=''
             type='dropdown'
           >
           Select a Star
           </option>
+          {starNames}
           </select>
-        <button className="submitButton">Submit</button>
+        <button>Submit</button>
       </form>
     )
   }
