@@ -4,8 +4,12 @@ class SearchStars extends Component {
   constructor() {
     super();
     this.state = {
-      searchValue: ''
+      searchValue: []
     }
+  }
+
+  componentDidMount() {
+    this.populateStars()
   }
 
   handleChange = (e) => {
@@ -21,6 +25,21 @@ class SearchStars extends Component {
     this.setState({
       searchValue: ''
     })
+  }
+
+  populateStars = async (stars) => {
+    try {
+      const response = await fetch(process.env.REACT_APP_DATABASE_API_URL + '/api/v1/stars')
+      const data = await response.json()
+      this.setState({
+        searchValue: data
+      })
+      console.log(this.state.searchValue)
+      console.log('stardata')
+    }
+    catch(error) {
+      return error.message
+    }
   }
 
 
