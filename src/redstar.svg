@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.0"
+   width="500"
+   height="500"
+   viewBox="0 0 484.60498 484.60498"
+   id="svg2"
+   xml:space="preserve"><defs
+   id="defs10" />
+	
+		<g
+   transform="matrix(0.8282607,-0.334639,0.334639,0.8282607,-38.841295,120.82446)"
+   id="Ebene_2">
+			<polygon
+   points="480.98389,143.43701 341.16748,143.43701 341.16748,3.6210938 242.30225,102.48535 143.43701,3.6210938 143.43701,143.43701 3.6210938,143.43701 102.48584,242.30225 3.6210938,341.16748 143.43701,341.16748 143.43701,480.98389 242.30225,382.11865 341.16748,480.98389 341.16748,341.16748 480.98389,341.16748 382.11865,242.30225 480.98389,143.43701 "
+   style="fill:url(#flameOn);stroke:#ffffff;stroke-width:5"
+   id="polygon7" />
+   <radialGradient spreadMethod="reflect"
+                    cx="50%"
+                    cy="50%"
+                    r="50%"
+                    fx="50%"
+                    fy="50%"
+                    fr="20%"
+                   id="flameOn">
+      <stop offset="0%" stop-color="white"/>
+      <stop offset="10%" stop-color="yellow"/>
+      <stop offset="95%" stop-color="red"/>
+   </radialGradient>
+		</g>
+	</svg>
