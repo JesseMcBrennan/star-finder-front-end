@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../css/App.css';
 import SearchStars from './SearchStars';
+import star from '../redstar.svg';
 
 class App extends Component {
   constructor() {
@@ -25,6 +26,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <img className="App-logo" src={star}/>
         <h1>STAR-FINDER</h1>
         <SearchStars />
       </div>
