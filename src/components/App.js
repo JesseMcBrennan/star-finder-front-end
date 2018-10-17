@@ -25,6 +25,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1>STAR-FINDER</h1>
         <SearchStars />
       </div>
     );

@@ -1,5 +1,18 @@
 .App {
-  text-align: center; }
+  height: 100vh;
+  width: 100vw;
+  background-image: url('https://hdwallsource.com/img/2015/9/gradient-background-46249-47587-hd-wallpapers.jpg');
+  padding-top: 1rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 13rem;
+  color: orange;
+  text-shadow: 2px 2px 2px yellow;
+  margin: 0;
+}
+  
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -23,3 +36,32 @@
     transform: rotate(0deg); }
   to {
     transform: rotate(360deg); } }
+
+form {
+  height: 50vh;
+  width: 75vw;
+  margin: auto;
+}
+
+form button {
+  display: block;
+  margin: 1rem auto;
+  height: 3rem;
+  width: 10rem;
+  color: purple;
+  font-size: xx-large;
+  background-image:     radial-gradient(circle at top right, yellow, #f06d06);
+}
+
+select {
+  height: 50vh;
+  width: 75vw;
+  font-size: 9rem;
+  color: yellow;
+  text-shadow: 2px 2px 2px red;
+  background-image: url('https://apod.nasa.gov/apod/image/1810/OrionRedBlue_Lindemann_960.jpg');
+  background-size: cover;
+}
+
+
+
