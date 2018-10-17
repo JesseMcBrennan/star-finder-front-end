@@ -54,7 +54,7 @@ class SearchStars extends Component {
   render() {
     const stars = this.state.searchValue
     const starNames = stars.map((star) => {
-      return <option id={star.id} value={star.name} key={star.name}>{star.name} </option>
+      return <option id={star.id} value={star.id} key={star.name}>{star.name} </option>
     });
   
     return (
