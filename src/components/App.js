@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import '../css/App.css';
 import SearchStars from './SearchStars';
-import CardContainer from './CardContainer';
 import star from '../redstar.svg';
+
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      stars: []
+      stars: [],
     };
   }
 
@@ -29,7 +29,6 @@ class App extends Component {
         <img className="App-logo" src={star}/>
         <h1>STAR-FINDER</h1>
         <SearchStars />
-        <CardContainer />
       </div>
     );
   }

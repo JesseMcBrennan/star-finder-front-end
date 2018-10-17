@@ -3,7 +3,7 @@ import ExoplanetCard from './ExoplanetCard';
 
 const CardContainer = ({exoplanets, removePlanet}) => {
   const details = exoplanets.map(exoplanet => {
-    <ExoplanetCard   {...exoplanet}
+    return <ExoplanetCard   {...exoplanet}
           key={exoplanet.id}
           removeIdea={removePlanet}
     />
