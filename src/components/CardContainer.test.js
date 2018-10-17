@@ -1,22 +1,22 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import IdeaContainer from './IdeaContainer';
+import CardContainer from './CardContainer';
 
-describe('IdeaContainer', () => {
-  let mockIdeas
+describe('CardContainer', () => {
+  let mockPlanets
   let wrapper
 
   it('should render all idea cards', () => {
-    mockIdeas = [{ title: 'Testing1', body: 'I used to hate it, but now I love it.', id: Date.now() },
-          { title: 'Testing2', body: 'Now that I love it, I am unstoppable.', id: Date.now() }]
-    wrapper = shallow(<IdeaContainer ideas={mockIdeas} />)
+    mockPlanets = [{ name: 'Planet1', mass: '22.90', id: 1 },
+          { name: 'Testing2', mass: '35.98', id: 2 }]
+    wrapper = shallow(<CardContainer planets={mockPlanets} />)
     expect(wrapper.find('Container')).children.length.toBe(2)
   })
 
   it('should match the snapshot', () => {
-    mockIdeas = [{ title: 'Testing1', body: 'I used to hate it, but now I love it.', id: Date.now() },
-          { title: 'Testing2', body: 'Now that I love it, I am unstoppable.', id: Date.now() }]
-    wrapper = shallow(<IdeaContainer ideas={mockIdeas} />)    
+    mockPlanets = [{ name: 'Planet1', mass: '22.90', id: 1 },
+          { name: 'Testing2', mass: '35.98', id: 2 }]
+    wrapper = shallow(<CardContainer planets={mockPlanets} />)    
     expect(wrapper).toMatchSnapshot()
   })
 })
