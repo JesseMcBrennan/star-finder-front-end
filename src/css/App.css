@@ -49,14 +49,20 @@ form button {
 }
 
 select {
-  height: 50vh;
+  height: 20vh;
   width: 75vw;
-  font-size: 9rem;
+  font-size: 7rem;
   color: yellow;
   text-shadow: 2px 2px 2px red;
   background-image: url('https://apod.nasa.gov/apod/image/1810/OrionRedBlue_Lindemann_960.jpg');
   background-size: cover;
 }
 
+.Container {
+  display: flex;
+  overflow: scroll;
+}
 
-
+.Card {
+  margin: 0 2rem;
+}
