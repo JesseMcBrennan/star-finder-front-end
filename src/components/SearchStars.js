@@ -47,14 +47,14 @@ class SearchStars extends Component {
 
     return (
       <form className="search-container" onSubmit={this.handleSubmit}>
-        <select name='search-stars' onChange={this.handleChange}>
+        <select name='selectedStar' onChange={this.handleChange}>
           <option 
             value=''
             type='dropdown'
           >
           Select a Star
           </option>
-          {starNames}
+            {starNames}
           </select>
         <button>Submit</button>
       </form>
