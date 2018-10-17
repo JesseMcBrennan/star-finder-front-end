@@ -7,23 +7,24 @@ class SearchStars extends Component {
       searchValue: [],
       selectedStar: ''
     }
+
   }
 
   componentDidMount() {
-    this.populateStars()
+    this.populateStars();
   }
 
   handleChange = (e) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     this.setState({
       [name]: value
-    })
+    });
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state.selectedStar)
-    this.populateExoplanets()
+    console.log(this.state.selectedStar);
+    this.populateExoplanets();
   }
 
   populateExoplanets = async (selectedStar) => {
@@ -34,20 +35,20 @@ class SearchStars extends Component {
     }
     catch(error) {
       return error.message
+
     }
   }
 
   populateStars = async (stars) => {
     try {
-      const response = await fetch(process.env.REACT_APP_DATABASE_API_URL + '/api/v1/stars')
-      const data = await response.json()
+      const response = await fetch(process.env.REACT_APP_DATABASE_API_URL + '/api/v1/stars');
+      const data = await response.json();
       this.setState({
         searchValue: data
-      })
-      console.log(this.state.searchValue)
-    }
-    catch(error) {
-      return error.message
+      });
+      console.log(this.state.searchValue);
+    } catch (error) {
+      return error.message;
     }
   }
 
@@ -67,12 +68,12 @@ class SearchStars extends Component {
           >
           Select a Star
           </option>
-            {starNames} 
-          </select>
+          {starNames}
+        </select>
         <button>Submit</button>
       </form>
-    )
+    );
   }
 }
 
-export default SearchStars
+export default SearchStars;
