@@ -29,6 +29,7 @@ class App extends Component {
         <img className="App-logo" src={star}/>
         <h1>STAR-FINDER</h1>
         <SearchStars />
+        <CardContainer />
       </div>
     );
   }
