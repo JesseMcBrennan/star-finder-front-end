@@ -28,7 +28,7 @@ class SearchStars extends Component {
 
   populateExoplanets = async (selectedStar) => {
     try {
-      const response = await fetch(process.env.REACT_APP_DATABASE_API_URL + `/api/v1/exoplanets`)
+      const response = await fetch(process.env.REACT_APP_DATABASE_API_URL + `/api/v1/exoplanets?star_id=${this.stateselectedStar}`)
       const data = await response.json()
       console.log(data)
     }
@@ -36,8 +36,6 @@ class SearchStars extends Component {
       return error.message
     }
   }
-
-
 
   populateStars = async (stars) => {
     try {
@@ -55,10 +53,10 @@ class SearchStars extends Component {
 
   render() {
     const stars = this.state.searchValue
-    const starNames = stars.map((star) => <option value={
-      star.name} className={star.id} key={star.name}>{star.name}</option>
-    );
-
+    const starNames = stars.map((star) => {
+      return <option id={star.id} value={star.name} key={star.name}>{star.name} </option>
+    });
+  
     return (
       <form className="search-container" onSubmit={this.handleSubmit}>
         <select name='selectedStar' onChange={this.handleChange}>
