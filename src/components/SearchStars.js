@@ -5,7 +5,7 @@ class SearchStars extends Component {
     super();
     this.state = {
       searchValue: [],
-      selectedStar: []
+      selectedStar: ''
     }
   }
 
@@ -28,7 +28,7 @@ class SearchStars extends Component {
 
   populateExoplanets = async (selectedStar) => {
     try {
-      const response = await fetch(process.env.REACT_APP_DATABASE_API_URL + `/api/v1/exoplanets?star_id=${this.stateselectedStar}`)
+      const response = await fetch(process.env.REACT_APP_DATABASE_API_URL + `/api/v1/exoplanets?star_id=${this.state.selectedStar}`)
       const data = await response.json()
       console.log(data)
     }
@@ -54,7 +54,8 @@ class SearchStars extends Component {
   render() {
     const stars = this.state.searchValue
     const starNames = stars.map((star) => {
-      return <option id={star.id} value={star.id} key={star.name}>{star.name} </option>
+
+      return <option id={star.id} value={star.id} key={star.id}>{star.name} </option>
     });
   
     return (
