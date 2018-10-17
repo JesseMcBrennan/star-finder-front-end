@@ -8,7 +8,8 @@ class SearchStars extends Component {
     super();
     this.state = {
       searchValue: [],
-      selectedStar: ''
+      selectedStar: '',
+      selectedPlanets: []
     }
 
   }
@@ -30,11 +31,13 @@ class SearchStars extends Component {
     this.populateExoplanets();
   }
 
-  populateExoplanets = async (selectedStar) => {
+  populateExoplanets = async () => {
     try {
       const response = await fetch(process.env.REACT_APP_DATABASE_API_URL + `/api/v1/exoplanets?star_id=${this.state.selectedStar}`)
       const data = await response.json()
-      console.log(data)
+      this.setState({
+        selectedPlanets: data
+      })
     }
     catch(error) {
       return error.message
@@ -49,7 +52,6 @@ class SearchStars extends Component {
       this.setState({
         searchValue: data
       });
-      console.log(this.state.searchValue);
     } catch (error) {
       return error.message;
     }
@@ -63,19 +65,21 @@ class SearchStars extends Component {
     });
   
     return (
-      <form className="search-container" onSubmit={this.handleSubmit}>
-        <select name='selectedStar' onChange={this.handleChange}>
-          <option 
-            value=''
-            type='dropdown'
-          >
-          Select a Star
-          </option>
-          {starNames}
-        </select>
-        <button>Submit</button>
-      </form>
-      <CardContainer exoplanets={this.state.planets}/>
+      <div>
+        <form className="search-container" onSubmit={this.handleSubmit}>
+          <select name='selectedStar' onChange={this.handleChange}>
+            <option 
+              value=''
+              type='dropdown'
+            >
+            Select a Star
+            </option>
+            {starNames}
+          </select>
+          <button>Submit</button>
+        </form>
+        <CardContainer exoplanets={this.state.selectedPlanets}/>
+        </div>
     );
   }
 }
