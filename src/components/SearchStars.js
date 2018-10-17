@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import CardContainer from './CardContainer';
+
+
 
 class SearchStars extends Component {
   constructor() {
@@ -70,6 +73,7 @@ class SearchStars extends Component {
         </select>
         <button>Submit</button>
       </form>
+      <CardContainer exoplanets={this.state.planets}/>
     );
   }
 }
