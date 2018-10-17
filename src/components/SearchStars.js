@@ -8,8 +8,9 @@ class SearchStars extends Component {
     super();
     this.state = {
       searchValue: [],
-      selectedStar: []
-    };
+      selectedStar: ''
+    }
+
   }
 
   componentDidMount() {
@@ -31,15 +32,15 @@ class SearchStars extends Component {
 
   populateExoplanets = async (selectedStar) => {
     try {
-      const response = await fetch(process.env.REACT_APP_DATABASE_API_URL + `/api/v1/exoplanets`);
-      const data = await response.json();
-      console.log(data);
-    } catch (error) {
-      return error.message;
+      const response = await fetch(process.env.REACT_APP_DATABASE_API_URL + `/api/v1/exoplanets?star_id=${this.state.selectedStar}`)
+      const data = await response.json()
+      console.log(data)
+    }
+    catch(error) {
+      return error.message
+
     }
   }
-
-
 
   populateStars = async (stars) => {
     try {
@@ -55,11 +56,12 @@ class SearchStars extends Component {
   }
 
   render() {
-    const stars = this.state.searchValue;
-    const starNames = stars.map((star) => <option value={
-      star.name} className={star.id} key={star.name}>{star.name}</option>
-    );
+    const stars = this.state.searchValue
+    const starNames = stars.map((star) => {
 
+      return <option id={star.id} value={star.id} key={star.id}>{star.name} </option>
+    });
+  
     return (
       <form className="search-container" onSubmit={this.handleSubmit}>
         <select name='selectedStar' onChange={this.handleChange}>
