@@ -54,7 +54,7 @@ form button {
 }
 
 select {
-  height: 50vh;
+  height: 20vh;
   width: 75vw;
   font-size: 9rem;
   color: yellow;
@@ -63,3 +63,11 @@ select {
   background-size: cover;
 }
 
+.Container {
+  display: flex;
+  overflow: scroll;
+}
+
+.Card {
+  margin: 0 2rem;
+}
