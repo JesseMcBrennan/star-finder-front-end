@@ -1,7 +1,10 @@
+body {
+  background-image: url('https://hdwallsource.com/img/2015/9/gradient-background-46249-47587-hd-wallpapers.jpg');
+}
+
 .App {
   height: 100vh;
   width: 100vw;
-  background-image: url('https://hdwallsource.com/img/2015/9/gradient-background-46249-47587-hd-wallpapers.jpg');
   padding-top: 1rem;
   text-align: center;
 }
@@ -65,4 +68,7 @@ select {
 
 .Card {
   margin: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
