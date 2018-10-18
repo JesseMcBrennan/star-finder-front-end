@@ -55,8 +55,24 @@ class SearchStars extends Component {
     }
   }
 
-  removePlanet = (id) => {
-    console.log(id)
+  removePlanet = async (id) => {
+    try{
+      const url = `/api/v1/exoplanets/${id}`;
+      const options = {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+      }
+      const response = await fetch(url, options)
+      console.log(response)
+      // console.log(exoplanet)
+      if (!response.ok) {
+        throw new Error(`${response.status}`);
+      }
+    } catch (error) {
+      return error.message;
+    }
+    return response
+    // exoplanet.remove();  
   }
 
   editText = async (e) => {
@@ -72,6 +88,7 @@ class SearchStars extends Component {
         };
         const response = await fetch(url, options);
         console.log(response)
+        // console.log(exoplanet)
         if (!response.ok) {
           throw new Error(`${response.status}`);
         }
