@@ -11,7 +11,6 @@ class SearchStars extends Component {
       selectedStar: '',
       selectedPlanets: []
     }
-
   }
 
   componentDidMount() {
@@ -27,7 +26,6 @@ class SearchStars extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state.selectedStar);
     this.populateExoplanets();
   }
 
@@ -57,6 +55,33 @@ class SearchStars extends Component {
     }
   }
 
+  removePlanet = (id) => {
+    console.log(id)
+  }
+
+  editText = async (e) => {
+    if(e.keyCode === 13){
+      try{
+        const url = `http://localhost:3009/api/v1/exoplanets/${e.target.id}`;
+        const options = {
+          method: 'PUT',
+          body: JSON.stringify({
+            name: e.target.textContent
+          }),
+          headers: { 'Content-Type': 'text/html' }
+        };
+        const response = await fetch(url, options);
+        console.log(response)
+        if (!response.ok) {
+          throw new Error(`${response.status}`);
+        }
+        return response;
+      } catch (error) {
+        return error.message;
+      }
+    }
+  }
+
   render() {
     const stars = this.state.searchValue
     const starNames = stars.map((star) => {
@@ -78,7 +103,11 @@ class SearchStars extends Component {
           </select>
           <button>Submit</button>
         </form>
-        <CardContainer exoplanets={this.state.selectedPlanets}/>
+        <CardContainer exoplanets={this.state.selectedPlanets}
+                        removePlanet={this.removePlanet}
+                        editText={this.editText}
+                        handleChange={this.handleChange}
+        />
         </div>
     );
   }
