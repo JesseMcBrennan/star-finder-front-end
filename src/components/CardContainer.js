@@ -1,11 +1,12 @@
 import React from 'react';
 import ExoplanetCard from './ExoplanetCard';
 
-const CardContainer = ({exoplanets, removePlanet}) => {
+const CardContainer = ({exoplanets, removePlanet, editText}) => {
   const details = exoplanets.map(exoplanet => {
     return <ExoplanetCard   {...exoplanet}
           key={exoplanet.id}
-          removeIdea={removePlanet}
+          removePlanet={removePlanet}
+          editText={editText}
     />
   })
 
