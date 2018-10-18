@@ -72,3 +72,7 @@ select {
   flex-direction: column;
   justify-content: space-between;
 }
+
+button {
+  width: 100px;
+}

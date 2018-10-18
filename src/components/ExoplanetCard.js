@@ -5,7 +5,7 @@ const ExoplanetCard = ({name, mass, id, removePlanet}) => {
     <div className="Card">
       <h3>{name}</h3>
       <p>{mass}</p>
-      <button onClick={() => removePlanet(id)}>Delete</button>
+      <button className="deleteButton" onClick={() => removePlanet(id)}>Delete</button>
     </div>
     )
 }

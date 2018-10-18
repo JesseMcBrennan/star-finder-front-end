@@ -57,6 +57,10 @@ class SearchStars extends Component {
     }
   }
 
+  deleteExoplanet = () => {
+    console.log('delete')
+  }
+
   render() {
     const stars = this.state.searchValue
     const starNames = stars.map((star) => {
